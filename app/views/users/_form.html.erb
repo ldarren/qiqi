@@ -1,0 +1,44 @@
+<%= form_with(model: user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cc %>
+    <%= f.text_field :cc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel %>
+    <%= f.text_field :tel %>
+  </div>
+
+  <div>
+  <%= f.collection_check_boxes(:skill_ids, Skill.all, :id, :name) do |i| %>
+    <%= i.label %>
+    <%= i.label { i.check_box } %>
+  <% end %>
+ </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

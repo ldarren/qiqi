@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+<p> <strong>Name:</strong> <%= @user.name %> </p>
+<p> <strong>Email:</strong> <%= @user.email %> </p>
+<p> <strong>Country Code:</strong> <%= @user.cc %> </p>
+<p> <strong>Tel:</strong> <%= @user.tel %> </p>
+<p> <b>Status:</b><%= @user.status%> </p>
+<p> <b>Updated At:</b><%= @user.updated_at%> </p>
+<p> <b>Created At:</b><%= @user.created_at %> </p>
+<br>
+
+<h2>Skills:</h2>
+<% @user.skills.each do |s|%>
+<p> <b>Name:</b><%= s.name %> </p>
+<p> <b>Desc:</b><%= s.desc%> </p>
+<%end%>
+<br>
+
+<h2>Add a skill:</h2>
+<%= form_for ([@user, @user.skills.build]) do |f| %>
+  <div class=field> <%= f.label :name%> <%= f.text_field :name%> </div>
+  <div class=field> <%= f.label :desc%> <%= f.text_area :desc%> </div>
+  <div class="actions"> <%= f.submit %> </div>
+<% end %>
+<br>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
