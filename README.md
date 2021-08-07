@@ -7,4 +7,4 @@
 
 - git remote add template [URL of this template]
 - git fetch --all
-- git merge template/[branch to be merged]
+- git merge template/[branch to be merged] --allow-unrelated-histories
