@@ -1,24 +1,10 @@
-# README
+# usage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- create a repository from that template [see](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)
+- git clone the new repo to your machine
 
-Things you may want to cover:
+## pull 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- git remote add template [URL of this template]
+- git fetch --all
+- git merge template/[branch to be merged]
